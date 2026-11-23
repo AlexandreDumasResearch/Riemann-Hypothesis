@@ -1,0 +1,313 @@
+\documentclass[11pt,a4paper]{article}
+\ifdefined\pdftrailerid\pdftrailerid{}\fi
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[a4paper,left=27mm,right=27mm,top=25mm,bottom=25mm,headheight=14pt,headsep=8mm]{geometry}
+\usepackage{microtype,fancyhdr}
+\usepackage[hidelinks,pdfencoding=auto,bookmarksnumbered=true]{hyperref}
+\hypersetup{pdftitle={The Riemann Hypothesis in One Inequality for Least Common Multiples},
+  pdfauthor={Alexandre Dumas},pdfsubject={A proof from Alpöge's arithmetic window estimate and an integer criterion for the Riemann hypothesis},
+  pdfkeywords={Riemann hypothesis, least common multiple, Chebyshev function, Mellin transform, prime powers, oscillation}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\itshape The Riemann hypothesis and least common multiples}
+\fancyhead[R]{\small A. Dumas}\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.25pt}
+\raggedbottom
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Znt}{\mathcal Z}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ee}{\mathrm e}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\pos}[1]{\bigl[#1\bigr]_+}
+\newcommand{\M}{\mathcal M}
+\newcommand{\lcm}{\operatorname{lcm}}
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+{\fontsize{22}{26}\selectfont\bfseries The Riemann Hypothesis in One\\[2pt] Inequality for Least Common Multiples\par}
+\vspace{7pt}
+{\large\itshape A proof from Alp\"oge's arithmetic window estimate\par}
+\vspace{12pt}
+{\large Alexandre Dumas\par}
+\vspace{2pt}
+{\small\href{https://orcid.org/0009-0003-1695-0086}{ORCID 0009-0003-1695-0086}\quad\textperiodcentered\quad 23 November 2026\par}
+\end{center}
+\begin{abstract}
+Put $L_N=\prod_{j=1}^{N-1}\lcm(1,\ldots,j)$. We prove that the Riemann hypothesis is equivalent to $L_{n^2}^{\,4}\le 2^{n^3}L_{2n^2}$ for every positive integer $n$. The converse uses a Mellin transform that retains a pole at every nontrivial zeta zero. A second integer inequality uses only prime powers in $(n^2,8n^2)$. We also determine the exact growth of the positive and negative parts of the associated prime sums on every fixed power interval, even when the supremum of the real parts of the zeros is unattained. Applied to the centered von Mangoldt ramp, this growth law gives a short deduction of the Riemann hypothesis from the arithmetic window estimate in Alp\"oge's formal proof. The integer equivalence and the growth law are proved here from classical zeta theory.
+\end{abstract}
+
+\section{An integer inequality and a deduction of RH}
+For $N\ge1$, let $L_N$ be the product in the abstract, with $L_1=1$. The factor $\lcm(1,\ldots,j)$ acquires a factor $p$ exactly when $j$ reaches a power of the prime $p$. Consequently its logarithm is the Chebyshev function $\psi(j)=\sum_{m\le j}\Lambda(m)$, where $\Lambda(p^a)=\log p$ for integral $a\ge1$ and $\Lambda(m)=0$ otherwise. Thus
+\begin{equation}\label{eq:lcm}
+ \log L_N=\sum_{j=1}^{N-1}\psi(j)=\sum_{m\le N}(N-m)\Lambda(m)=:R(N).
+\end{equation}
+All logarithms are natural. We use the same finite sum to define $R(x)$ for real $x>0$.
+
+\begin{theorem}\label{thm:integer}
+The Riemann hypothesis holds if and only if
+\begin{equation}\label{eq:one}
+ \boxed{\displaystyle L_{n^2}^{\,4}\ \le\ 2^{n^3}\,L_{2n^2}\qquad(n=1,2,\ldots).}
+\end{equation}
+It suffices that \eqref{eq:one} hold for all sufficiently large $n$.
+\end{theorem}
+For example, $L_4=12$ and $L_8=217\,728\,000$, so $L_4^4/L_8=1/10\,500$. At $n=42$ the ratio is strictly between $2^{123}$ and $2^{124}$, as can be checked using integer arithmetic. The exponent $4$ cancels the quadratic main term of $R$ at the scales $x$ and $2x$. The remaining contribution of a zero $\rho$ is proportional to $(4-2^{1+\rho})x^{1+\rho}$, whose coefficient cannot vanish in the open critical strip. Sampling at $x=n^2$ makes the error scale $x^{3/2}=n^3$ an integer. Section~\ref{sec:lcm} proves the equivalence. Corollary~\ref{cor:local} shows that, for any fixed $\lambda>1$, it even suffices to bound every integer in $[N,N^\lambda]$ for arbitrarily large $N$.
+
+Elementary inequalities equivalent to RH have a substantial history. Lagarias's divisor-sum criterion is one example \cite{lagarias}. Here the arithmetic object is an integral of $\psi$, which makes the contributions of the zeta zeros absolutely summable.
+
+\subsection*{The arithmetic input}
+Let $\gamma$ denote Euler's constant and set
+\begin{equation}\label{eq:G}
+ G(x)=\sum_{m\le x}\Lambda(m)(x/m-1)-x\log x+(1+\gamma)x,\qquad x\ge1.
+\end{equation}
+We use the following arithmetic consequence of the Alp\"oge--Claude construction \cite{alp,rub}. For every $\eta>0$ there is $K_\eta>0$ such that, for every $Y_0\ge2$, some $Y\ge Y_0$ satisfies
+\begin{equation}\tag{W}\label{eq:W}
+  G(x)\le K_\eta x^{1/2+\eta}\qquad (Y\le x\le Y^{3/2}).
+\end{equation}
+The same $Y$ works for all $x$ in the interval. We import the arithmetic construction at this point. Its use below precedes the conclusion about zeros.
+
+Write $\Znt$ for the distinct nontrivial zeros of $\zeta$, $m_\rho$ for their multiplicities and $\Theta=\sup_{\rho\in\Znt}\Rea\rho$. Symmetry gives $1/2\le\Theta\le1$. Put $[v]_+=\max(v,0)$. The analytic assertion used here is that for $0<r<\Theta$ and $\lambda>1$,
+\begin{equation}\label{eq:div}
+  \int_Y^{Y^\lambda}\pos{G(x)}x^{-r}\,\frac{\dd x}{x}\longrightarrow\infty
+   \qquad(Y\to\infty).
+\end{equation}
+Theorem~\ref{thm:growth} proves the exact growth exponent and covers both signs.
+
+\begin{corollary}\label{cor:rh}
+The arithmetic estimate \eqref{eq:W} implies RH and hence \eqref{eq:one}.
+\end{corollary}
+\begin{proof}
+If $\Theta>1/2$, choose $\eta>0$ and $r$ with $1/2+\eta<r<\Theta$. Set $h=r-1/2-\eta$. On the intervals of \eqref{eq:W} the integral in \eqref{eq:div} with $\lambda=3/2$ is at most $K_\eta Y^{-h}/h$, which tends to zero. This contradicts \eqref{eq:div}. Reflection in the critical line puts every nontrivial zero on it.
+\end{proof}
+
+\paragraph{Where the estimate enters.}
+In the zeta exposition \cite[Part I, \S I.6 and Part II, (II.6)--(II.8), (A)]{rub}, a common pair of auxiliary primes on a selected interval supplies three real quadratic characters $\chi_q,\chi_d,\chi_q\chi_d$. With $G_\chi(x)=\sum_{m\le x}\Lambda(m)\chi(m)(x/m-1)+xL'(1,\chi)/L(1,\chi)$, expansion of $(1+\chi_q)(1-\chi_d)$ gives the centered sum $R_{q,d}=G+G_{\chi_q}-G_{\chi_d}-G_{\chi_q\chi_d}$. The three twists have absolute value at most $x^{1/2+\eps}$ on the interval. The lattice comparison and auxiliary estimates give
+\[
+ R_{q,d}(x)\le C_\eps x^{C\eps}
+ \left(\frac{x}{m}+\frac{xm}{k}+m+\frac{k}{b^2}\right).
+\]
+Here $m,k,b$ have exponents $1/2,9/2,2$, respectively, up to $O(\eps)$ with absolute implied constants. The four terms have exponents $1/2,-3,1/2,1/2$ up to the same order of loss. Taking $\eps$ sufficiently small gives \eqref{eq:W}. The construction of the data, including uniformity in the selected intervals, is part of the external input. The exposition quotes the underlying comparison (M) from the formal development. The joint verification statement concerns that development \cite{lean}. The archive locations for the normalization and the use of the comparison are given in \cite{archive}.
+
+\section{Two absolutely convergent explicit formulas}\label{sec:explicit}
+Write $\ell=\log(2\pi)$ and $c_\rho=m_\rho/[\rho(1-\rho)]$.
+\begin{lemma}\label{lem:explicit}
+For every $x\ge1$,
+\begin{align}
+ G(x)&=\ell+\sum_{\rho\in\Znt}c_\rho x^\rho
+              -\sum_{j\ge1}\frac{x^{-2j}}{2j(2j+1)},\label{eq:explicitG}\\
+ R(x)&=\frac{x^2}{2}-\ell x+b
+   -\sum_{\rho\in\Znt}\frac{m_\rho x^{1+\rho}}{\rho(1+\rho)}
+   -\sum_{j\ge1}\frac{x^{1-2j}}{2j(2j-1)},\label{eq:explicitR}\\
+ b&=\ell-\tfrac12+\log2+\sum_{\rho\in\Znt}\frac{m_\rho}{\rho(1+\rho)}.\label{eq:b}
+\end{align}
+The series converge absolutely and locally uniformly. In particular $G(x)\ll x^\Theta$.
+\end{lemma}
+\begin{proof}
+For $\Rea s>1$, integrating $(x/m-1)_+$ gives the Mellin transform
+\[
+ F(s)=\int_1^\infty G(x)x^{-s}\frac{\dd x}{x}
+ =-\frac{\zeta'(s)}{s(s-1)\zeta(s)}-\frac1{(s-1)^2}
+          +\frac{1+\gamma}{s-1}.
+\]
+Let $g(s)=(s-1)\zeta(s)$, $h=-g'/g$. The genus-one Hadamard product \cite{garrett} gives $h(s)=c-\sum_a m_a((s-a)^{-1}+a^{-1})$, with $a$ running over all zeros of $g$, including the trivial ones, and $\sum_a m_a/|a|^2<\infty$. The expansions of $\zeta$ at $0$ and $1$ give $h(0)=1-\ell$ and $h(1)=-\gamma$ \cite{dlmf}. For
+\[
+ \mathcal{D}h(s)=\frac{h(s)-(1-s)h(0)-sh(1)}{s(s-1)}
+\]
+one has $F(s)=\ell/s+\mathcal{D}h(s)$. The operator $\mathcal{D}$ kills affine functions and sends $(s-a)^{-1}$ to $1/[a(a-1)(s-a)]$. Local normal convergence now gives
+\[
+ F(s)=\frac{\ell}{s}+\sum_a\frac{m_a}{a(1-a)(s-a)}.
+\]
+The coefficients are absolutely summable. Termwise integration shows that the right side of \eqref{eq:explicitG} has this transform for $\Rea s>1$. Uniqueness of the Laplace transform after $x=\ee^t$, followed by continuity, gives \eqref{eq:explicitG}, including $x=1$.
+
+Put $S(x)=G(x)+x\log x-(1+\gamma)x$. For each $m\le x$, elementary integration gives
+\[
+ x(x/m-1)-2\int_m^x(t/m-1)\dd t=x-m.
+\]
+Thus $R(x)=xS(x)-2\int_1^x S(t)\dd t$. In this expression $t^a$ contributes $(a-1)x^{a+1}/(a+1)$ and a constant when $a\ne-1$. The term $t\log t$ contributes $x^2/2$ and a constant. Applying this to \eqref{eq:explicitG} gives \eqref{eq:explicitR}. Evaluate at $x=1$, where $R(1)=0$, and use $\sum_{j\ge1}1/[2j(2j-1)]=\log2$ to get \eqref{eq:b}.
+\end{proof}
+
+\section{Proof of the integer criterion}\label{sec:lcm}
+\subsection*{The bound on the critical line}
+Under RH, $c_\rho=m_\rho/|\rho|^2>0$. At $x=1$, the equality $G(1)=1+\gamma$ and the sum $\sum_{j\ge1}1/[2j(2j+1)]=1-\log2$ give
+\begin{equation}\label{eq:cstar}
+ \sum_\rho c_\rho=C_*:=2+\gamma-\log(4\pi)=0.0461914179\ldots\, .
+\end{equation}
+Also $|1+\rho|\ge |\rho|$. Consequently $\sum_\rho m_\rho/|\rho(1+\rho)|\le C_*$ and $b<\ell+1$ by \eqref{eq:b}. For the numerical inequalities below it suffices that $C_*<47/1000$ and $\log2>69/100$. For example, with $H_j=\sum_{k\le j}1/k$ one has $\gamma<H_{4096}-\log4096<0.5774$ and $\log(4\pi)>\log(12.56)>2.5305$. The indicated rational bounds can be checked by the series for $\log v=2\operatorname{arctanh}((v-1)/(v+1))$.
+
+In $4R(x)-R(2x)$ the quadratic terms cancel, and the terms from the trivial zeros are all nonpositive since $4-2^{1-2j}>0$. For $x\ge4$, the remaining elementary term $3b-2\ell x$ is negative, since $\ell>1$. Equation \eqref{eq:explicitR} therefore gives
+\begin{equation}\label{eq:forward}
+ 4R(x)-R(2x)\le (4+2\sqrt2)C_*\,x^{3/2}
+                    <\tfrac12(\log2)x^{3/2}.
+\end{equation}
+Take $x=n^2$ and apply \eqref{eq:lcm}. The case $n=1$ follows from $L_1=L_2=1$.
+
+\subsection*{A direct converse from Mellin positivity}
+Write $B(x)=(4R(x)-R(2x))/x$. If \eqref{eq:one} holds eventually, then $B(n^2)\le n\log2$ for all sufficiently large $n$. For fixed $a>0$, almost everywhere,
+\begin{equation}\label{eq:slope}
+ \frac{\dd}{\dd x}\frac{R(ax)}{x}
+   =\frac{1}{x^2}\sum_{m\le ax}m\Lambda(m)\ll_a\log(2x)
+   \qquad(x\ge1).
+\end{equation}
+The functions are locally absolutely continuous. Consecutive squares are $O(\sqrt x)$ apart, so $B(x)\le C\sqrt{x}\log(2x)$ for $x\ge1$.
+
+For $\Rea s>1$, integrate $(ax-m)_+/x$ against $x^{-s}\dd x/x$ and sum the Euler product derivative. This gives
+\begin{equation}\label{eq:MB}
+ \int_0^\infty B(x)x^{-s}\frac{\dd x}{x}
+  =-\frac{\zeta'(s)}{\zeta(s)}\frac{4-2^{1+s}}{s(s+1)}.
+\end{equation}
+Fix $1/2<\sigma_0<1$ and choose $K$ so that $H(x)=Kx^{\sigma_0}-B(x)\ge0$ on $[1,\infty)$. Its Mellin transform is regular at every real $s>\sigma_0$. Indeed $4-2^{1+s}$ cancels the pole at $1$, $\zeta$ has no real zero in $(0,1)$ by the alternating zeta series, and removing the interval $(0,1)$ from \eqref{eq:MB} changes the transform by an entire function.
+
+For completeness, the transform of a nonnegative $H$ must be singular at its real abscissa of convergence $a$ if $a$ is finite. If it extended holomorphically to a disc about $a$, the Taylor series about a sufficiently close $s_1>a$ would converge at $s_1-u<a$ for some $u>0$. Its terms there are
+\[
+ \frac{u^j}{j!}\int_1^\infty H(x)x^{-s_1}(\log x)^j\frac{\dd x}{x}\ge0.
+\]
+By monotone convergence their sum is the original integral at $s_1-u$, a contradiction. Thus the transform of $H$ is holomorphic on $\Rea s>\sigma_0$. Solving for the right side of \eqref{eq:MB} shows that it is holomorphic there as well. A zero $\rho$ in that half-plane would give it a pole, because $|2^{1+\rho}|<4$ in the strip. Letting $\sigma_0\downarrow1/2$ and reflecting proves Theorem~\ref{thm:integer}.
+
+\section{How the real parts of zeros govern both signs}\label{sec:gaussian}
+The next result applies to $G$, to $B$, and to the local prime sum in Section~\ref{sec:local}. Consider a real function on $x\ge1$ of the form
+\begin{equation}\label{eq:class}
+ F(x)=\sum_{\rho\in\Znt} a_\rho x^\rho+O(1),\qquad
+ \sum_\rho|a_\rho|<\infty,\quad a_\rho\ne0,\quad
+ a_{\bar\rho}=\overline{a_\rho}.
+\end{equation}
+We assume $F$ is locally integrable. Multiplicities have been combined in $a_\rho$.
+
+\begin{theorem}\label{thm:growth}
+For each sign separately, every fixed $\lambda>1$ and $\theta>0$,
+\begin{equation}\label{eq:growth}
+ \lim_{Y\to\infty}\frac{\log\!\left(1+
+    \displaystyle\int_Y^{Y^\lambda}\pos{\pm F(x)}x^{-\theta}\frac{\dd x}{x}\right)}
+    {\log Y}
+      =\lambda[\Theta-\theta]_+ .
+\end{equation}
+\end{theorem}
+\begin{proof}
+The bound $F(x)\ll x^\Theta$ gives the upper exponent, including $\theta=\Theta$, when the integral is $O(\log Y)$. It suffices to establish \eqref{eq:div} with $G$ replaced by either sign of $F$, for all $0<r<\Theta$. In logarithmic coordinates put $b_\rho=\Rea\rho-r$, $t_\rho=\Im\rho$ and
+\[
+ S(t)=\sum_\rho a_\rho\ee^{(b_\rho+\ii t_\rho)t},\qquad A=\sum_\rho|a_\rho|.
+\]
+Then $|S(t)|\le A\ee^{|t|}$ on the real line, and $\ee^{-rt}F(\ee^t)=S(t)+O(\ee^{-rt})$ for $t\ge0$. The interval $J=[\log Y,\lambda\log Y]$ has center $T=(1+\lambda)\log Y/2$ and half-length $dT$, where $d=(\lambda-1)/(\lambda+1)$. Set $v=d^2/8$ and let $w_T$ be the Gaussian probability density of mean $T$ and variance $vT$.
+
+The modulated integral $I_u=\int_{\mathbb R} S(t)\ee^{-\ii ut}w_T(t)\dd t$ is, by absolute integration,
+\begin{equation}\label{eq:score}
+ I_u=\sum_\rho a_\rho\exp\{T(z_\rho+vz_\rho^2/2)\},\qquad
+ z_\rho=b_\rho+\ii(t_\rho-u).
+\end{equation}
+The real exponent is $H_\rho(u)=b_\rho+v(b_\rho^2-(t_\rho-u)^2)/2$. On compact sets of $u$ these scores tend uniformly to $-\infty$ with $|t_\rho|$. Only finitely many zeros compete for the maximum locally. Write $H(u)=\max_\rho H_\rho(u)$ and $h_0=\max(0,H(0))$.
+
+If $H(0)>0$, moving the frequency to the ordinate of a maximizer at zero raises its score strictly, since $t_\rho\ne0$. If $H(0)\le0$, choose any zero with $b_\rho>0$ and move to its ordinate. In both cases $H(u)>h_0$ on an open interval. Scores of zeros with different ordinates cross at most once. At a shared ordinate the scores are distinct because $b+vb^2/2$ increases on $[-1,1]$. We can therefore choose a fixed $u$ with a unique maximizer $*$ and a positive gap $\delta$ to every other score. Set $h=H_*(u)>h_0$. By \eqref{eq:score},
+\[
+ |I_u|\ge |a_*|\ee^{hT}-A\ee^{(h-\delta)T},
+ \qquad |I_0|\le A\ee^{h_0T}.
+\]
+Since $S$ is real and $w_T\ge0$, both signs satisfy
+\begin{equation}\label{eq:sign}
+ \int_{\mathbb R}\pos{\pm S}w_T\dd t
+  =\tfrac12\left(\int_{\mathbb R}|S|w_T\dd t\ \pm I_0\right)
+    \ge\tfrac12(|I_u|-|I_0|)\gg\ee^{hT}.
+\end{equation}
+For $Z\sim N(0,vT)$, the bound $|T+Z|\le T+|Z|$ and completion of the square give
+\[
+ \int_{\mathbb R\setminus J}|S|w_T\dd t
+ \le 2A\exp\!\left[\left(1+v/2-(d-v)^2/(2v)\right)T\right]
+ =2A\ee^{(d-3)T}.
+\]
+Here $v<d$ and the elementary Gaussian tail bound applies. On $J$, replacing $S$ by $\ee^{-rt}F(\ee^t)$ costs $O(1)$ in the weighted integral since the positive part is $1$-Lipschitz. Finally $w_T\le(2\pi vT)^{-1/2}$. Each unweighted mass on $J$ is therefore $\gg\sqrt T\,\ee^{hT}$. This proves the required divergence without choosing a zero at the supremum $\Theta$.
+
+For $\theta<\Theta$ choose $\theta<r<\Theta$ and $1<a<\lambda$. The last subinterval $[Y^a,Y^\lambda]$ is a power window with base $Y^a$ and exponent $\lambda/a$. Its mass at $r$ eventually exceeds one. Since $x^{r-\theta}\ge Y^{a(r-\theta)}$ there, the lower exponent is at least $a(r-\theta)$. Let $a\uparrow\lambda$ and $r\uparrow\Theta$. Nonnegativity supplies the lower bound when $\theta\ge\Theta$.
+\end{proof}
+Classical one-sided oscillation theorems on power intervals include the work of Kaczorowski and Pintz \cite{kp}. The two estimates in \eqref{eq:sign} give the signed integral exponent directly for the absolutely summable expansion \eqref{eq:class}.
+
+\section{A local prime-power inequality and exact growth on squares}\label{sec:local}
+Define $D f(x)=f(2x)$ in this section, and let $Q(z)=(z-1)(z-2)(z-4)=z^3-7z^2+14z-8$. The three roots eliminate the constant, linear and quadratic terms in \eqref{eq:explicitR}. The logarithm of
+\begin{equation}\label{eq:ratio}
+ V_n=\frac{L_{8n^2} L_{2n^2}^{\,14}}{L_{4n^2}^{\,7}L_{n^2}^{\,8}}
+\end{equation}
+is $Q(D)R(x)$ at $x=n^2$. In particular only prime powers in $(n^2,8n^2)$ affect the reduced ratio. Indeed $Q(D)R(x)=\sum_m\Lambda(m)w_x(m)$, with
+\begin{equation}\label{eq:weights}
+ w_x(m)=
+ \begin{cases}
+  8(x-m),&x<m\le2x,\\
+  6m-20x,&2x<m\le4x,\\
+  8x-m,&4x<m\le8x,\\
+  0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+At any integer $x$ these are integer exponents of $p$ for $m=p^j$. The cancellation for $m\le x$ follows by expanding the four ramps.
+
+\begin{corollary}\label{cor:local}
+RH is equivalent to $V_n\le 2^{9n^3}$ for every integer $n\ge2$. For either choice $U_n=L_{n^2}^4/L_{2n^2}$ or $U_n=V_n$, for each sign and each fixed $\lambda>1$,
+\begin{equation}\label{eq:squares}
+ \lim_{N\to\infty}
+ \frac{\log\!\left(1+\displaystyle\max_{N\le n\le N^\lambda}
+           \pos{\,\pm n^{-3}\log U_n\,}\right)}{\log N}
+ =2\lambda(\Theta-\tfrac12).
+\end{equation}
+The maximum runs over integers. In particular, if $\Theta>1/2$, the corresponding upper inequality fails on every sufficiently large fixed power interval of indices.
+\end{corollary}
+\begin{proof}
+Under RH, $|Q(2^{1+\rho})|\le(2\sqrt2+1)(2\sqrt2+2)(2\sqrt2+4)=64+44\sqrt2$. Also $|Q(2^{1-2j})|\le8$. For $x\ge4$, \eqref{eq:explicitR} and \eqref{eq:cstar} give
+\[
+ \frac{|Q(D)R(x)|}{x^{3/2}}
+ \le (64+44\sqrt2)C_*+8(\log2)x^{-5/2}
+ \le (64+44\sqrt2)C_*+\tfrac14\log2<9\log2.
+\]
+In the last step $64+44\sqrt2<127$, $C_*<0.047$ and $\log2>0.69$ suffice.
+
+For either $P(z)=4-z$ or $P=Q$ let $F(x)=P(D)R(x)/x$. As $P(4)=0$, formula \eqref{eq:explicitR} has the form \eqref{eq:class} for $F$, with coefficients
+\[
+ a_\rho=-\frac{m_\rho P(2^{1+\rho})}{\rho(1+\rho)}.
+\]
+They are nonzero since $2<|2^{1+\rho}|<4$. At a square $x=n^2$ one has $n^{-3}\log U_n=F(x)/\sqrt x$. The bound $F(x)\ll x^\Theta$ proves the upper bound in \eqref{eq:squares} and settles $\Theta=1/2$.
+
+If $\Theta>1/2$, choose $1/2<r<\Theta$ and $1<a<b<\lambda$. By \eqref{eq:growth} at exponent $r$, the signed mass on $[N^{2a},N^{2b}]$ eventually exceeds its logarithmic length. Somewhere in that interval $\pm F(x)>x^r$. By \eqref{eq:slope}, moving to a nearest square costs $O(\sqrt x\log(2x))=o(x^r)$. Its index lies in $[N,N^\lambda]$ for large $N$. The maximum in \eqref{eq:squares} is therefore $\gg N^{2a(r-1/2)}$. Let $a\uparrow\lambda$ and $r\uparrow\Theta$. This also proves the converse for $V_n$.
+\end{proof}
+
+\section{The original ramp at the critical exponent}\label{sec:endpoint}
+The same analysis retains a statistic formed from integer samples of $G$,
+\begin{equation}\label{eq:Ak}
+ A_k=\sum_{n=4^k}^{8^k}\frac{\pos{G(n)}}{n^{3/2}},
+ \qquad \Theta=\frac12+\lim_{k\to\infty}\frac{\log(1+A_k)}{3k\log2}.
+\end{equation}
+Indeed, for fixed $\theta>0$ and $X\ge Y\ge2$, replacing $\int_Y^X\pos{\pm G(x)}x^{-1-\theta}\dd x$ by the corresponding sum over integers has error $O_\theta(Y^{-\theta}\log^2(2Y))$. On every open unit interval, $G'(x)=\sum_{m\le x}\Lambda(m)/m-\log x+\gamma=O(\log^2(2x))$. Together with $G(x)\ll x\log^2(2x)$ this bounds the integral of the absolute derivative of the summand's continuous extension, plus the two endpoint suprema, by the stated error. Apply \eqref{eq:growth} at $Y=4^k$, $\lambda=3/2$, $\theta=1/2$. In particular, $\log(1+A_k)=o(k)$ along any one unbounded subsequence implies RH. Directed rounding gives $A_1\in[0.691431818656347233058,\,0.691431818656347233059]$.
+
+\begin{proposition}\label{prop:peak}
+Under RH, for every fixed $\lambda>1$,
+\[
+ \lim_{Y\to\infty}\max_{Y\le x\le Y^\lambda}\frac{G(x)}{\sqrt{x}}=C_*.
+\]
+Moreover $A_k=\kappa k\log2+o(k)$ with $\kappa>0$.
+\end{proposition}
+\begin{proof}
+Equation \eqref{eq:explicitG} gives $x^{-1/2}G(x)=P_0(\log x)+O(x^{-1/2})$, with $P_0(t)=\sum_\rho c_\rho\ee^{\ii t_\rho t}$. The coefficients are positive and sum to $C_*$, so $|P_0(t)|\le C_*=P_0(0)$. For any finite set of ordinates its phase vector returns to each neighborhood of the identity with bounded gaps. Indeed the compact closure of the orbit is covered by finitely many translates, by orbit elements, of that neighborhood. Subtracting one of their finitely many times gives a return within bounded distance of any time. The absolutely summable tail gives the asserted maximum on intervals of logarithmic length tending to infinity.
+
+Denote the uniform mean over such intervals by $M$. Trigonometric polynomials have this mean by termwise integration. Uniform approximation gives it for $P_0$, $P_0^2$ and $|P_0|$ (approximate absolute value by polynomials on $[-C_*,C_*]$). The frequencies are nonzero and are distinct after grouping multiplicities on the critical line. Thus $MP_0=0$, $M(P_0^2)=\sum_\rho c_\rho^2$ and
+\[
+ \kappa=M([P_0]_+)=\tfrac12 M|P_0|
+       \ge\frac{\sum_\rho c_\rho^2}{2C_*}>0 .
+\]
+Integrate over $[\log(4^k),\log(8^k)]$ and apply the preceding sum--integral estimate.
+\end{proof}
+
+\paragraph{Computational supplement.}
+The source archive includes exact integer checks comparing products of running least common multiples with independently computed prime-power exponents. It also supplies rational bounds for the numerical constants, directed-rounding enclosures for $A_1,\ldots,A_5$ and tests of the Gaussian identities. The proofs establish the assertions over all indices.
+
+\paragraph{Acknowledgment.}
+OpenAI Codex assisted with the mathematical development, manuscript preparation and computational checks.
+
+\begin{thebibliography}{9}\small
+\bibitem{alp} L. Alp\"oge, \href{https://alpo.ge/remark.pdf}{\emph{Announcement of a proof of the Riemann hypothesis}}, 20 November 2026. With Claude. Formal development released with the announcement.
+\bibitem{rub} \href{https://www.math.uwaterloo.ca/~mrubinst/alpoge_claude_grh/zeta-paper.pdf}{\emph{The Alp\"oge--Claude proof of the Riemann hypothesis explained for the Riemann zeta function}}, working draft prepared at the request of M. O. Rubinstein, 21 November 2026, Part I, \S I.6, Part II, \S\S3--5, and Part III, Theorems III.1.1 and III.2.1.
+\bibitem{lean} Lean and Mathlib communities, \href{https://leanprover-community.github.io/blog/posts/riemann-hypothesis/}{\emph{Lean verification of the Riemann Hypothesis}}, 21 November 2026.
+\bibitem{archive} L. Alp\"oge, formal source, November 2026. The source mirror gives the \href{https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/main/src/Formalism/StatementOC.lean}{definition of the centered ramp} (\texttt{Gz}), the \href{https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/main/src/Development/AutomorphicArithmetic/CharacterBoxes/SupplyChi.lean}{supply of arithmetic data on intervals} (\texttt{supplyChi}) and the \href{https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/main/src/Development/AutomorphicArithmetic/CharacterBoxes/ZeroFreeAllOfTopG.lean}{call to the comparison before zero exclusion} (\texttt{zeroFreeAll\_of\_topG}).
+\bibitem{garrett} P. Garrett, \href{https://www-users.cse.umn.edu/~garrett/m/number_theory/riemann_hadamard_product.pdf}{\emph{Riemann--Hadamard product for $\zeta(s)$}}, University of Minnesota, 2021.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions, \href{https://dlmf.nist.gov/25.2}{\S25.2}, \href{https://dlmf.nist.gov/25.4}{\S25.4}, \href{https://dlmf.nist.gov/25.6}{\S25.6} and \href{https://dlmf.nist.gov/25.10}{\S25.10}.
+\bibitem{kp} J. Kaczorowski and J. Pintz, \href{https://doi.org/10.1007/BF01949062}{Oscillatory properties of arithmetical functions. I}, \emph{Acta Math. Hungar.} \textbf{48} (1986), 173--185.
+\bibitem{lagarias} J. C. Lagarias, \href{https://arxiv.org/abs/math/0008177}{An elementary problem equivalent to the Riemann hypothesis}, \emph{Amer. Math. Monthly} \textbf{109} (2002), 534--543.
+\end{thebibliography}
+\end{document}
