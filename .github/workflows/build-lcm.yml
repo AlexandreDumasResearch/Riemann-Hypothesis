@@ -36,5 +36,8 @@ jobs:
           git add 'Riemann Hypothesis/LCM-One-Inequality/main.pdf'
           if ! git diff --cached --quiet; then
             git commit -m 'Build LCM manuscript PDF from reviewed LaTeX'
-            git push
+            # Rebase on the current default branch to include concurrent research edits.
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
