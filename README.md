@@ -6,6 +6,7 @@ Research manuscripts, technical notes, and reproducible numerical checks concern
 
 ## Manuscripts
 
+- [In Pursuit of a Proof of the Riemann Hypothesis — Research Atlas, Critical Edition (23 November 2026)](Riemann%20Hypothesis/RH-Research-Atlas-Critical-Edition/) — corrected research atlas, with source files and revision ledger; **not a completed proof of RH**.
 - [The Riemann Hypothesis in One Inequality for Least Common Multiples](Riemann%20Hypothesis/LCM-One-Inequality/) — reviewed edition, 23 November 2026.
 
 ## Important mathematical status
