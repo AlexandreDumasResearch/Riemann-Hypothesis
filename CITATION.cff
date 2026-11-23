@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this research, cite the relevant manuscript and its version."
+title: "Riemann Hypothesis — Research Manuscripts"
+type: software
+authors:
+  - family-names: Dumas
+    given-names: Alexandre
+    orcid: "https://orcid.org/0009-0003-1695-0086"
+url: "https://github.com/AlexandreDumasResearch/Riemann-Hypothesis"
+date-released: "2026-11-23"
+license: "CC-BY-4.0"
