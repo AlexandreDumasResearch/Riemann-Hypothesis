@@ -1,0 +1,40 @@
+name: Build and publish LCM manuscript PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Riemann Hypothesis/LCM-One-Inequality/main.tex'
+      - '.github/workflows/build-lcm.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-lcm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout research repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install TeX toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq latexmk texlive-latex-extra texlive-fonts-recommended texlive-latex-recommended texlive-science
+      - name: Compile revised research manuscript
+        working-directory: Riemann Hypothesis/LCM-One-Inequality
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+          test -s main.pdf
+          pdfinfo main.pdf | grep -E 'Pages:|Page size:'
+      - name: Commit compiled PDF to repository
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 'Riemann Hypothesis/LCM-One-Inequality/main.pdf'
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build LCM manuscript PDF from reviewed LaTeX'
+            git push
+          fi
