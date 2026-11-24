@@ -1,0 +1,93 @@
+AUTHOR PUBLICATION REPORT
+Alexandre Dumas | ORCID 0009-0003-1695-0086
+13 October 2026
+
+Signed Prime Correlations and Theta Continuation for the Riemann Xi Function
+
+SUBSTANTIVE MATHEMATICAL ADDITIONS
+
+1. Effective complete-sector extraction. The unchanged remainder now has
+   sum_{m>=M}|r_m|^2 <= 3*10^12 M^(-1/2), M>=2. The proof retains
+   the prime-square endpoint, gamma, every higher prime power and the
+   full moving cutoff. A refined formula allows smaller computable
+   constants. The displayed universal constant is intentionally coarse.
+   Consequences: weighted l^2 for exponents below 1/2, weak l^(4/3),
+   l^p for p>4/3, and complete-sector Cesaro error O(N^(-3/4)).
+
+2. Pointwise extraction. An elementary adjacent-Laguerre differential-
+   equation argument gives r_m=O(m^(-3/4) log^(5/2)(m+2)). The gamma
+   sector alone has leading term -32/[27(2m+1)]; this is not asserted
+   as the leading term of the complete remainder. Finite error bounds
+   are provided. No endpoint l^(4/3) or optimal-rate claim is made.
+
+3. Complete cross-degree prime sampling. The centered prime-diagonal
+   form equals an exact banded Jacobi form plus a compact operator.
+   The sharp symbol range is [64,20000]. The actual-cutoff estimate
+   is uniform over arbitrarily wide growing degree blocks, and includes
+   an explicit error in terms of the prime discrepancy norm. That norm
+   is defined analytically but has not been numerically enclosed.
+   This strengthens fixed-lag asymptotics to an operator statement.
+
+4. Independent complete-sector identity. All even prime powers collapse
+   exactly into -zeta'/zeta on the zero-free line. Abel continuation
+   recovers the endpoint correction and gives an exact Parseval tail
+   formula preserving correlations between all auxiliary sectors.
+   The unrestricted Bessel constant is proved sharp.
+
+5. Larger complete-theta positivity region. Opposite contour rotations
+   give positivity for |x| <= b_n n^(3/2)/(log n)^2, for any b_n -> 0,
+   uniformly at bounded heat of either sign. Full contour, endpoint,
+   Gaussian and theta-mode estimates are included. Negative-heat
+   compatibility remains explicit and prohibits inferring RH from
+   this region alone.
+
+INDEPENDENT CHECKING AND PRESERVATION
+
+The central sector identity was reconstructed through the original
+Laguerre/Stieltjes argument and a separate boundary/Abel argument.
+Independent internal reviews reconstructed the effective constants,
+pointwise differential equation, compact prime-sampling remainder and
+all intermediate theta contour rotations. No material defect was found
+in the examined statements. This is internal mathematical checking,
+not external peer review or proof-assistant formal verification.
+
+All 144 inherited formal statement/proof blocks remain textually intact,
+and all 392 inherited labels are preserved. The new results are integrated
+into the arithmetic, sector and saddle narratives; the independent
+Parseval proof is an appendix. The manuscript carries no version label.
+
+Executed new checks: 1121 rational cross-degree assertions; 37 exact
+constant/form checks; exact pointwise ODE/band identities; 15 exact
+rotated-saddle identities. Floating envelope samples are diagnostics.
+The original 89 validated moment enclosures and finite sign certificates
+are preserved with their existing execution records. Source quadrature
+and unchanged historical checks were not rerun for this extension.
+
+PRIORITY AND NECESSARY QUALIFICATIONS
+
+The introduction now explicitly credits Sekatskii's generalized Li and
+subexponential criteria, Coffey's Laguerre/von-Mangoldt decompositions,
+Suzuki's bounded-response and norm criteria, and Connes--Consani's
+finite-Mellin-constraint Weil criterion. Their underlying principles
+are not claimed as discoveries here. The contribution claims concern
+the precise extraction, quantitative bounds, cross-degree form and
+complete-source asymptotics proved in this manuscript. No exhaustive
+international-priority guarantee is made.
+
+No fatal proof defect required removal of an inherited theorem. One
+potential overinterpretation was explicitly excluded: the sharp diagonal
+lower bound is relative to weighted coefficient energy. Broad averaging
+can reduce that energy; the theorem does not rule out averaging itself.
+
+REMAINING DECISIVE PROBLEM AND PUBLICATION STATUS
+
+None of the new estimates bounds U_m independently of h_m. The missing
+arithmetic estimate remains signed cancellation between distinct primes
+sufficient to make the quadratic averages of U_m bounded (or polynomially
+bounded). The source alternative still requires the cofinal discriminant
+budget or uniform actual Jensen residue signs. RH remains unresolved.
+
+The complete manuscript and reproducibility package are ready for serious
+external mathematical evaluation. The new claims have full proofs and
+focused reproducible algebra checks, but no numerical score, external
+acceptance, comprehensive novelty assurance or RH proof is asserted.

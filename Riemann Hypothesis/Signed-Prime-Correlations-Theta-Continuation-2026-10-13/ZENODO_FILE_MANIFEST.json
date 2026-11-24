@@ -1,0 +1,30 @@
+{
+  "source": "https://doi.org/10.5281/zenodo.23345390",
+  "zenodo_record_id": 23345390,
+  "zenodo_title": "Signed Prime Correlations and Theta Continuation for the Riemann Xi Function: Effective sector remainders, signed arithmetic criteria, and complete-source positivity",
+  "published": "2026-10-13",
+  "version": "1.0",
+  "mirrored_files": [
+    {
+      "filename": "Dumas_RH_Complete_Reproducibility_2026-10-13.zip",
+      "size": 1516924,
+      "checksum": "md5:f007af0ee10735784656e131d2dfdaf7"
+    },
+    {
+      "filename": "Dumas_RH_Complete_LaTeX_2026-10-13.zip",
+      "size": 176192,
+      "checksum": "md5:5783ed810c71c97ed39768ab7721a627"
+    },
+    {
+      "filename": "Dumas_Signed_Prime_Correlations_and_Theta_Continuation_2026-10-13.pdf",
+      "size": 1232930,
+      "checksum": "md5:2eb544928f754b76b814ef3ce81ac5b9"
+    },
+    {
+      "filename": "Dumas_RH_Author_Change_Log_2026-10-13.txt",
+      "size": 4980,
+      "checksum": "md5:df03c49fb138d6bb349a8094e8de6a8c"
+    }
+  ],
+  "skipped_files": []
+}
