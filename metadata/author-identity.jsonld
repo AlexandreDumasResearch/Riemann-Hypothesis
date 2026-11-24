@@ -1,0 +1,235 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://oxidiem.com/alexandre-dumas/#profile",
+      "url": "https://oxidiem.com/alexandre-dumas/",
+      "name": "Alexandre Dumas (1989) — OXIDIEM Founder & Independent Researcher",
+      "description": "Alexandre Dumas (born in 1989 in Aurillac, Cantal, France) is a contemporary French independent researcher and founder of OXIDIEM. His research interests include analytic number theory, mathematical physics, theoretical physics, computational complexity, quantum information and predictive memory.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "mentions": [
+        {
+          "@id": "https://doi.org/10.5281/zenodo.24433166"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.22828993"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.18482998"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.24454608"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23038918"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23005174"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.24447004"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.20148708"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://oxidiem.com/alexandre-dumas/#person",
+      "url": "https://oxidiem.com/alexandre-dumas/",
+      "name": "Alexandre Dumas",
+      "givenName": "Alexandre",
+      "familyName": "Dumas",
+      "alternateName": "Alexandre Dumas (1989–)",
+      "description": "Alexandre Dumas (born in 1989 in Aurillac, Cantal, France) is a contemporary French independent researcher and founder of OXIDIEM. His research interests include analytic number theory, mathematical physics, theoretical physics, computational complexity, quantum information and predictive memory.",
+      "disambiguatingDescription": "Contemporary French independent researcher and entrepreneur born in 1989 in Aurillac, France; distinct from the historical novelists of the same name.",
+      "jobTitle": "Independent Researcher",
+      "nationality": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ORCID",
+          "value": "0009-0003-1695-0086",
+          "url": "https://orcid.org/0009-0003-1695-0086"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Google Scholar author ID",
+          "value": "_np5jC0AAAAJ",
+          "url": "https://scholar.google.com/citations?user=_np5jC0AAAAJ"
+        },
+        {
+          "@type": "PropertyValue",
+          "propertyID": "GitHub user ID",
+          "value": "360086108",
+          "url": "https://github.com/AlexandreDumasResearch"
+        }
+      ],
+      "sameAs": [
+        "https://orcid.org/0009-0003-1695-0086",
+        "https://scholar.google.com/citations?user=_np5jC0AAAAJ",
+        "https://commons.datacite.org/orcid.org/0009-0003-1695-0086",
+        "https://github.com/AlexandreDumasResearch",
+        "https://independent.academia.edu/AlexandreDumas30",
+        "https://www.linkedin.com/in/alexandredmsg",
+        "https://x.com/AlexandreXDumas"
+      ],
+      "knowsAbout": [
+        "Analytic number theory",
+        "Riemann hypothesis",
+        "Mathematical physics",
+        "Theoretical physics",
+        "Quantum gravity",
+        "Gravitational-wave physics",
+        "Computational complexity",
+        "Quantum information",
+        "Predictive memory",
+        "Artificial intelligence"
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#profile"
+      },
+      "birthPlace": {
+        "@type": "City",
+        "name": "Aurillac",
+        "containedInPlace": {
+          "@type": "AdministrativeArea",
+          "name": "Cantal",
+          "containedInPlace": {
+            "@type": "Country",
+            "name": "France"
+          }
+        }
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://oxidiem.com/#organization",
+      "name": "OXIDIEM",
+      "url": "https://oxidiem.com/",
+      "founder": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.24433166",
+      "url": "https://doi.org/10.5281/zenodo.24433166",
+      "name": "Gaussian Prime Moments, Möbius Tails, and Weil Forms",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.24433166"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.22828993",
+      "url": "https://doi.org/10.5281/zenodo.22828993",
+      "name": "Complex Chiral Rapidity, Hidden Memory, and Causal Gravitational-Wave Parity Transport",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.22828993"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.18482998",
+      "url": "https://doi.org/10.5281/zenodo.18482998",
+      "name": "Adaptive Non-Local Gravity: A Tensor Parity Horizon from Dynamic Cutoffs",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.18482998"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.24454608",
+      "url": "https://doi.org/10.5281/zenodo.24454608",
+      "name": "In Pursuit of a Proof of the Riemann Hypothesis: From Schur Minors and Heat Collisions to Gaussian Detectors and Signed Primes",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.24454608"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.23038918",
+      "url": "https://doi.org/10.5281/zenodo.23038918",
+      "name": "Intervention-Relative Predictive Memory",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.23038918"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.23005174",
+      "url": "https://doi.org/10.5281/zenodo.23005174",
+      "name": "Minimal Persistent Measurements for Time-Varying Unobservable Subspaces",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.23005174"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.24447004",
+      "url": "https://doi.org/10.5281/zenodo.24447004",
+      "name": "The Riemann Hypothesis in One Inequality for Least Common Multiples",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.24447004"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.20148708",
+      "url": "https://doi.org/10.5281/zenodo.20148708",
+      "name": "Flagged Reciprocal-Pair Positivity for Boundary-Absorbed Schur-Minor Gates",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.20148708"
+      }
+    }
+  ]
+}
