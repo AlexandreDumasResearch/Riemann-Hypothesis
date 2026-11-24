@@ -13,28 +13,37 @@
       },
       "mentions": [
         {
-          "@id": "https://doi.org/10.5281/zenodo.24433166"
+          "@id": "https://doi.org/10.5281/zenodo.23038918"
         },
         {
           "@id": "https://doi.org/10.5281/zenodo.22828993"
         },
         {
-          "@id": "https://doi.org/10.5281/zenodo.18482998"
-        },
-        {
-          "@id": "https://doi.org/10.5281/zenodo.24454608"
-        },
-        {
-          "@id": "https://doi.org/10.5281/zenodo.23038918"
+          "@id": "https://doi.org/10.5281/zenodo.24433166"
         },
         {
           "@id": "https://doi.org/10.5281/zenodo.23005174"
         },
         {
+          "@id": "https://doi.org/10.5281/zenodo.18482998"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.23345390"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.19980862"
+        },
+        {
           "@id": "https://doi.org/10.5281/zenodo.24447004"
         },
         {
+          "@id": "https://doi.org/10.5281/zenodo.20172308"
+        },
+        {
           "@id": "https://doi.org/10.5281/zenodo.20148708"
+        },
+        {
+          "@id": "https://doi.org/10.5281/zenodo.24454608"
         }
       ]
     },
@@ -121,16 +130,16 @@
     },
     {
       "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.5281/zenodo.24433166",
-      "url": "https://doi.org/10.5281/zenodo.24433166",
-      "name": "Gaussian Prime Moments, Möbius Tails, and Weil Forms",
+      "@id": "https://doi.org/10.5281/zenodo.23038918",
+      "url": "https://doi.org/10.5281/zenodo.23038918",
+      "name": "Intervention-Relative Predictive Memory",
       "author": {
         "@id": "https://oxidiem.com/alexandre-dumas/#person"
       },
       "identifier": {
         "@type": "PropertyValue",
         "propertyID": "DOI",
-        "value": "10.5281/zenodo.24433166"
+        "value": "10.5281/zenodo.23038918"
       }
     },
     {
@@ -149,44 +158,16 @@
     },
     {
       "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.5281/zenodo.18482998",
-      "url": "https://doi.org/10.5281/zenodo.18482998",
-      "name": "Adaptive Non-Local Gravity: A Tensor Parity Horizon from Dynamic Cutoffs",
+      "@id": "https://doi.org/10.5281/zenodo.24433166",
+      "url": "https://doi.org/10.5281/zenodo.24433166",
+      "name": "Gaussian Prime Moments, Möbius Tails, and Weil Forms",
       "author": {
         "@id": "https://oxidiem.com/alexandre-dumas/#person"
       },
       "identifier": {
         "@type": "PropertyValue",
         "propertyID": "DOI",
-        "value": "10.5281/zenodo.18482998"
-      }
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.5281/zenodo.24454608",
-      "url": "https://doi.org/10.5281/zenodo.24454608",
-      "name": "In Pursuit of a Proof of the Riemann Hypothesis: From Schur Minors and Heat Collisions to Gaussian Detectors and Signed Primes",
-      "author": {
-        "@id": "https://oxidiem.com/alexandre-dumas/#person"
-      },
-      "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "DOI",
-        "value": "10.5281/zenodo.24454608"
-      }
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "@id": "https://doi.org/10.5281/zenodo.23038918",
-      "url": "https://doi.org/10.5281/zenodo.23038918",
-      "name": "Intervention-Relative Predictive Memory",
-      "author": {
-        "@id": "https://oxidiem.com/alexandre-dumas/#person"
-      },
-      "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "DOI",
-        "value": "10.5281/zenodo.23038918"
+        "value": "10.5281/zenodo.24433166"
       }
     },
     {
@@ -205,6 +186,48 @@
     },
     {
       "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.18482998",
+      "url": "https://doi.org/10.5281/zenodo.18482998",
+      "name": "Adaptive Non-Local Gravity: A Tensor Parity Horizon from Dynamic Cutoffs",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.18482998"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.23345390",
+      "url": "https://doi.org/10.5281/zenodo.23345390",
+      "name": "Signed Prime Correlations and Theta Continuation for the Riemann Xi Function: Effective sector remainders, signed arithmetic criteria, and complete-source positivity",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.23345390"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.19980862",
+      "url": "https://doi.org/10.5281/zenodo.19980862",
+      "name": "Boundary-Absorbed A2-Curvature Inequalities for Toeplitz–Pólya Frequency Schur Minors",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.19980862"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.5281/zenodo.24447004",
       "url": "https://doi.org/10.5281/zenodo.24447004",
       "name": "The Riemann Hypothesis in One Inequality for Least Common Multiples",
@@ -219,6 +242,20 @@
     },
     {
       "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.20172308",
+      "url": "https://doi.org/10.5281/zenodo.20172308",
+      "name": "Vertical Proper Position and Wronskian Gram Feasibility for Jensen Polynomials",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.20172308"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.5281/zenodo.20148708",
       "url": "https://doi.org/10.5281/zenodo.20148708",
       "name": "Flagged Reciprocal-Pair Positivity for Boundary-Absorbed Schur-Minor Gates",
@@ -229,6 +266,20 @@
         "@type": "PropertyValue",
         "propertyID": "DOI",
         "value": "10.5281/zenodo.20148708"
+      }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.24454608",
+      "url": "https://doi.org/10.5281/zenodo.24454608",
+      "name": "In Pursuit of a Proof of the Riemann Hypothesis: From Schur Minors and Heat Collisions to Gaussian Detectors and Signed Primes",
+      "author": {
+        "@id": "https://oxidiem.com/alexandre-dumas/#person"
+      },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5281/zenodo.24454608"
       }
     }
   ]
