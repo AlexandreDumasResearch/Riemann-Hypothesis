@@ -34,13 +34,16 @@ graph TD
 
 ## Selected research records
 
-- [Gaussian Prime Moments, Möbius Tails, and Weil Forms](https://doi.org/10.5281/zenodo.24433166)
-- [Complex Chiral Rapidity, Hidden Memory, and Causal Gravitational-Wave Parity Transport](https://doi.org/10.5281/zenodo.22828993)
-- [Adaptive Non-Local Gravity: A Tensor Parity Horizon from Dynamic Cutoffs](https://doi.org/10.5281/zenodo.18482998)
-- [In Pursuit of a Proof of the Riemann Hypothesis: From Schur Minors and Heat Collisions to Gaussian Detectors and Signed Primes](https://doi.org/10.5281/zenodo.24454608)
 - [Intervention-Relative Predictive Memory](https://doi.org/10.5281/zenodo.23038918)
+- [Complex Chiral Rapidity, Hidden Memory, and Causal Gravitational-Wave Parity Transport](https://doi.org/10.5281/zenodo.22828993)
+- [Gaussian Prime Moments, Möbius Tails, and Weil Forms](https://doi.org/10.5281/zenodo.24433166)
 - [Minimal Persistent Measurements for Time-Varying Unobservable Subspaces](https://doi.org/10.5281/zenodo.23005174)
+- [Adaptive Non-Local Gravity: A Tensor Parity Horizon from Dynamic Cutoffs](https://doi.org/10.5281/zenodo.18482998)
+- [Signed Prime Correlations and Theta Continuation for the Riemann Xi Function: Effective sector remainders, signed arithmetic criteria, and complete-source positivity](https://doi.org/10.5281/zenodo.23345390)
+- [Boundary-Absorbed A2-Curvature Inequalities for Toeplitz–Pólya Frequency Schur Minors](https://doi.org/10.5281/zenodo.19980862)
 - [The Riemann Hypothesis in One Inequality for Least Common Multiples](https://doi.org/10.5281/zenodo.24447004)
+- [Vertical Proper Position and Wronskian Gram Feasibility for Jensen Polynomials](https://doi.org/10.5281/zenodo.20172308)
 - [Flagged Reciprocal-Pair Positivity for Boundary-Absorbed Schur-Minor Gates](https://doi.org/10.5281/zenodo.20148708)
+- [In Pursuit of a Proof of the Riemann Hypothesis: From Schur Minors and Heat Collisions to Gaussian Detectors and Signed Primes](https://doi.org/10.5281/zenodo.24454608)
 
 This is author-identification metadata, not an assertion of peer review or proof certification. OpenAlex is intentionally omitted pending author-disambiguation corrections.
