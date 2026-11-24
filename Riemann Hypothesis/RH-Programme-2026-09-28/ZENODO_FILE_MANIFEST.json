@@ -1,0 +1,75 @@
+{
+  "source": "https://doi.org/10.5281/zenodo.23024470",
+  "zenodo_record_id": 23024470,
+  "zenodo_title": "The Riemann Hypothesis Programme",
+  "published": "2026-09-28",
+  "version": "1.0",
+  "mirrored_files": [
+    {
+      "filename": "RH_GOLD_BOOK_READING_FULL_2026-09-28.pdf",
+      "size": 4544576,
+      "checksum": "md5:c3a5ac7417a1d16e952ae9d9ad2e3531"
+    },
+    {
+      "filename": "RH_EXHAUSTIVE_ARCHITECTURE_ATLAS_AND_LOST_GEMS_2026-09-28_SOURCE_MANIFEST (2).tsv",
+      "size": 640,
+      "checksum": "md5:99f326e9e7135005b7205a67c1ad8347"
+    },
+    {
+      "filename": "RH_GOLD_INTERNAL_WORKINGS_BOOK_2026-09-28.pdf",
+      "size": 48758,
+      "checksum": "md5:6c6dd0da016e50684ba00f96d216cf62"
+    },
+    {
+      "filename": "RH_Programme_Workings_Book_2026-09-28.md",
+      "size": 365533,
+      "checksum": "md5:85ae05304e820654583e548c293c6fe5"
+    },
+    {
+      "filename": "RH_GOLD_INTERNAL_WORKINGS_BOOK_2026-09-28.md",
+      "size": 55710837,
+      "checksum": "md5:c62bf4244f63f2c5ecd7d4710b2b64b7"
+    },
+    {
+      "filename": "RH_EXHAUSTIVE_MASTER_ARCHIVE_2026-09-28.sha256 (2).txt",
+      "size": 109,
+      "checksum": "md5:7ac2d6662faf780267588d027d3d0450"
+    },
+    {
+      "filename": "RH_EXHAUSTIVE_ARCHITECTURE_ATLAS_AND_LOST_GEMS_2026-09-28 (1).md",
+      "size": 55710006,
+      "checksum": "md5:87e18bad991bd8ac36b2c377a8dfe5aa"
+    },
+    {
+      "filename": "RH_Programme_Workings_Book_2026-09-28.pdf",
+      "size": 645397,
+      "checksum": "md5:8cff5e0e1273eb63389c40d379f03c06"
+    },
+    {
+      "filename": "RH_GOLD_BOOK_COMPLETE_ON_PAGE_2026-09-28.pdf",
+      "size": 76981510,
+      "checksum": "md5:f5aad9571863b7fd64d0fd2d3b0d717b"
+    },
+    {
+      "filename": "RH_EXHAUSTIVE_MASTER_ARCHIVE_2026-09-28 (2).md",
+      "size": 55192718,
+      "checksum": "md5:a5d146d98ed03e49b66a53c55b5c9ce8"
+    },
+    {
+      "filename": "RH_GOLD_INTERNAL_WORKINGS_PACKAGE_2026-09-28.zip",
+      "size": 7753306,
+      "checksum": "md5:31068d3588835504db96d346d9d618dc"
+    },
+    {
+      "filename": "RH_EXHAUSTIVE_ARCHITECTURE_ATLAS_AND_LOST_GEMS_2026-09-28.sha256 (1).txt",
+      "size": 127,
+      "checksum": "md5:64b3ab8449ca80a1aae0008ae28a3c22"
+    },
+    {
+      "filename": "RH_EXHAUSTIVE_MASTER_ARCHIVE_2026-09-28_SOURCE_MANIFEST (2).tsv",
+      "size": 4414,
+      "checksum": "md5:8096401c2bde5c579a7ffbdeb82b696f"
+    }
+  ],
+  "skipped_files": []
+}
