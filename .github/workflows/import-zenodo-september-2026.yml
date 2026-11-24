@@ -1,0 +1,98 @@
+name: Import original Zenodo September 2026 RH archive
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-zenodo-september-2026.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download and checksum-verify original Zenodo files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, re, urllib.request, urllib.parse
+          record_id = 23024470
+          dest = pathlib.Path('Riemann Hypothesis/RH-Programme-2026-09-28/archive')
+          dest.mkdir(parents=True, exist_ok=True)
+          req = urllib.request.Request(f'https://zenodo.org/api/records/{record_id}', headers={'User-Agent': 'RH-Archive-GitHub-Mirror/1.0'})
+          with urllib.request.urlopen(req, timeout=120) as f:
+              record = json.load(f)
+          files = record.get('files', [])
+          if not files:
+              raise RuntimeError('Zenodo API did not return archived files')
+          skipped, copied = [], []
+          for item in files:
+              name = item.get('key', '')
+              if not name or name != pathlib.PurePosixPath(name).name or any(c in name for c in '\\\n\r'):
+                  raise RuntimeError(f'Unsafe archive filename: {name!r}')
+              size = int(item.get('size') or 0)
+              if size >= 95_000_000:
+                  skipped.append({'filename': name, 'size': size, 'reason': 'GitHub 100 MB file limit; preserved at Zenodo DOI'})
+                  print(f'SKIP >95MB: {name} ({size} bytes)', flush=True)
+                  continue
+              link = (item.get('links') or {}).get('self') or (item.get('links') or {}).get('content')
+              if not link or not urllib.parse.urlparse(link).scheme == 'https' or urllib.parse.urlparse(link).hostname not in ('zenodo.org', 'www.zenodo.org'):
+                  raise RuntimeError(f'Unexpected source URL for {name}: {link}')
+              target = dest / name
+              expected = str(item.get('checksum') or '').lower()
+              algo, sep, expected_hex = expected.partition(':')
+              if not sep:
+                  algo, expected_hex = 'md5', expected
+              if algo not in ('md5', 'sha256'):
+                  raise RuntimeError(f'Unsupported checksum algorithm: {algo}')
+              digest = hashlib.new(algo)
+              partial = dest / (name + '.incomplete')
+              print(f'Downloading {name} ({size} bytes)', flush=True)
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(link, headers={'User-Agent':'RH-Archive-GitHub-Mirror/1.0'}), timeout=240) as response, open(partial, 'wb') as out:
+                      count=0
+                      while True:
+                          chunk=response.read(1_048_576)
+                          if not chunk: break
+                          count += len(chunk)
+                          if count > 95_000_000: raise RuntimeError(f'Download exceeded GitHub upload threshold for {name}')
+                          digest.update(chunk)
+                          out.write(chunk)
+                  if size and count != size:
+                      raise RuntimeError(f'Size mismatch {name}: {count} != {size}')
+                  if expected_hex and digest.hexdigest().lower() != expected_hex:
+                      raise RuntimeError(f'Checksum mismatch {name}')
+                  os.replace(partial, target)
+              finally:
+                  partial.unlink(missing_ok=True)
+              copied.append({'filename':name,'size':count,'checksum':f'{algo}:{digest.hexdigest()}'})
+          provenance = {
+            'source':f'https://doi.org/10.5281/zenodo.{record_id}',
+            'zenodo_record_id':record_id,
+            'zenodo_title':record.get('metadata',{}).get('title'),
+            'published':record.get('metadata',{}).get('publication_date'),
+            'version':record.get('metadata',{}).get('version'),
+            'mirrored_files':copied,
+            'skipped_files':skipped
+          }
+          (dest.parent/'ZENODO_FILE_MANIFEST.json').write_text(json.dumps(provenance,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          print(f'Imported {len(copied)} original files, skipped {len(skipped)} oversized files', flush=True)
+          PY
+      - name: Commit archive to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "Riemann Hypothesis/RH-Programme-2026-09-28/"
+          if git diff --cached --quiet; then
+            echo "Files already match Zenodo; nothing to commit."
+          else
+            git commit -m "Archive original Sept 28 2026 Zenodo programme files with checksums"
+            git push origin HEAD:main
+          fi
