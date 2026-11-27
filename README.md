@@ -6,7 +6,7 @@ Research manuscripts, technical notes, and reproducible numerical checks concern
 
 ## Manuscripts
 
-- [Adelic Volume Conservation and Structural RH Refinements (27 November 2026)](Riemann%20Hypothesis/Structural-Refinements-2026-11-27/) — full original LaTeX manuscript, recent research dossier, star-equation index, counterexamples, Lean candidates and verification ledger; source-relative and conditional results, not an independent RH proof.
+- [Adelic Volume Conservation and Structural RH Refinements (27 November 2026)](Riemann%20Hypothesis/Structural-Refinements-2026-11-27/) — full original LaTeX manuscript, recent research dossier, star-equation index, counterexamples, 11 Lean-checked interface lemmas and verification ledger; source-relative and conditional results, not an independent RH proof.
 
 - [In Pursuit of a Proof of the Riemann Hypothesis — Research Atlas, Critical Edition (23 November 2026)](Riemann%20Hypothesis/RH-Research-Atlas-Critical-Edition/) — corrected research atlas, with source files and revision ledger; **not a completed proof of RH**.
 - [The Riemann Hypothesis in One Inequality for Least Common Multiples](Riemann%20Hypothesis/LCM-One-Inequality/) — reviewed edition, 23 November 2026.
