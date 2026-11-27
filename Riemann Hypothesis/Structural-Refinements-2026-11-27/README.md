@@ -7,6 +7,8 @@ Research checkpoint: 27 November 2026. AI-assisted working notes; not a proof an
 - [Analytic and geometric ledger](01-Analytic-and-geometric.md): all recent sieve, packing, spanning, frequency and abandoned alternatives.
 - [Adelic determinant and arithmetic ledger](02-Determinants-and-Selmer.md): conservation, reachable projection, mixed twists, weighted clearing and all arithmetic star equations.
 - [Crystalline and trace algebra](03-Crystalline-and-trace-algebra.md): crystalline block estimates, short/long remainder budget, augmentation, Tor, conormal and separator constructions, new tied-cocycle refinement.
+- [Source-local replacement theorem](05-Source-local-replacement.md): exact main and Tate restricted cocycle costs (new C9 star).
+- [Original full LaTeX manuscript](manuscript/adelic_volume_RH.tex): exact original 29-page manuscript source.
 - [Verification and dependency ledger](04-Verification.md): status and tests, precise remaining obligations and reproducibility instructions.
 - [Lean candidate lemmas](verification/StructuralChecks.lean): small algebraic interfaces, not a formalization of RH.
 
@@ -39,6 +41,7 @@ Upstream source pinned to [lsernau/grh-lean at 72fead102f663d5c7a407964a13dc0cf9
 | C6 | local commutator identity | E |
 | C7 | weighted conductor target | O |
 | C8 | tied, normalized reachable commutator quotient (new) | E/C |
+| C9 | source-local main/Tate replacement and combined conductor budget (new) | E/S/C |
 
 ## Research priority
 1. Use C8 on the actual main-summand tied rows before spending arithmetic budget on universal crystalline defects.
