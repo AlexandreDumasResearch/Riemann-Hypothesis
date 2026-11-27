@@ -10,9 +10,10 @@ Research checkpoint: 27 November 2026. AI-assisted working notes; not a proof an
 - [Source-local replacement theorem](05-Source-local-replacement.md): exact main and Tate restricted cocycle costs (new C9 star).
 - [Local saturation and relative Smith lengths](06-Local-saturation.md): new conditional finite-matrix replacement, C10 and C11.
 - [Relative determinantal conductor](07-Relative-determinantal-conductor.md): exact signed determinant ratio C12 and global target C13.
+- [Qualitative Bmax period lift](08-Qualitative-period-lift.md): C14 derives the period-lift assumption of C10 from pinned qualitative admissibility and regularity.
 - [Original full LaTeX manuscript](manuscript/adelic_volume_RH.tex): exact original 29-page manuscript source.
 - [Verification and dependency ledger](04-Verification.md): status and tests, precise remaining obligations and reproducibility instructions.
-- [Lean candidate lemmas](verification/StructuralChecks.lean): small algebraic interfaces, not a formalization of RH.
+- [Lean lemmas](verification/StructuralChecks.lean): 11 kernel-checked algebraic interfaces ([successful run](https://github.com/AlexandreDumasResearch/Riemann-Hypothesis/actions/runs/45948892951)), not a formalization of RH.
 
 The earlier September programme, October signed correlations, November critical atlas and LCM inequality are preserved in the parent repository. This checkpoint consolidates the recent conversation and visible interrupted Work findings; it is not an exhaustive transcription of inaccessible Work scratch files. The earlier 29-page manuscript "Adelic Volume Conservation, Coupled Bessel Sieves, and Mixed-Twist Determinants" is the basis of the analytic and determinant ledger; this checkpoint extends it with subsequent discoveries and corrections.
 
@@ -44,14 +45,14 @@ Upstream source pinned to [lsernau/grh-lean at 72fead102f663d5c7a407964a13dc0cf9
 | C7 | weighted conductor target | O |
 | C8 | tied, normalized reachable commutator quotient (new) | E/C |
 | C9 | source-local main/Tate replacement and combined conductor budget (new) | E/S/C |
-
 | C10 | local relation saturation and relative image length | E/C |
 | C11 | weighted relative Smith-length target | O |
 | C12 | exact signed determinantal divisor formula | E |
 | C13 | weighted relative determinant budget | C/O |
+| C14 | qualitative Bmax period lift of the local augmentation cocycle | S (human derivation) |
 
 ## Research priority
-1. Verify the qualitative local augmentation period lift in C10 and compute relative saturation images after C8/C9 ties; no need to bound full global Tor if the smaller image suffices.
+1. Formalize C14 and estimate the actual relative saturation images after C8/C9 ties; no need to bound full global Tor if the smaller image suffices.
 2. Establish an effective local conductor for the *image* of local commutators, not a full trace discriminant.
 3. Treat the trivial Tate character separately; it cannot be separated from augmentation.
 4. Check every source-relative substitution, particularly common height multipliers, normalizations and finite-place sums.
