@@ -1,0 +1,42 @@
+name: RH structural checks
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/rh-structural-checks.yml'
+      - 'Riemann Hypothesis/Structural-Refinements-2026-11-27/verification/**'
+permissions:
+  contents: read
+jobs:
+  finite-regressions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 "Riemann Hypothesis/Structural-Refinements-2026-11-27/verification/regression.py"
+  lean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Elan
+        run: |
+          curl --fail --silent --show-error --location https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch pinned upstream environment
+        run: |
+          git init "$RUNNER_TEMP/grh-upstream"
+          git -C "$RUNNER_TEMP/grh-upstream" remote add origin https://github.com/lsernau/grh-lean.git
+          git -C "$RUNNER_TEMP/grh-upstream" fetch --depth=1 origin 72fead102f663d5c7a407964a13dc0cf9d977207
+          git -C "$RUNNER_TEMP/grh-upstream" checkout --detach FETCH_HEAD
+          test "$(git -C "$RUNNER_TEMP/grh-upstream" rev-parse HEAD)" = 72fead102f663d5c7a407964a13dc0cf9d977207
+          cp "Riemann Hypothesis/Structural-Refinements-2026-11-27/verification/StructuralChecks.lean" "$RUNNER_TEMP/grh-upstream/grh/StructuralChecks.lean"
+      - name: Check Mathlib-only candidate lemmas
+        run: |
+          cd "$RUNNER_TEMP/grh-upstream/grh"
+          cat lean-toolchain
+          lean --version
+          lake exe cache get
+          lake env lean StructuralChecks.lean 2>&1 | tee "$RUNNER_TEMP/lean-check.log"
+          if grep -E 'sorryAx|declaration uses .sorry.' "$RUNNER_TEMP/lean-check.log"; then
+            exit 1
+          fi
