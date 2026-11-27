@@ -11,6 +11,7 @@ Research checkpoint: 27 November 2026. AI-assisted working notes; not a proof an
 - [Local saturation and relative Smith lengths](06-Local-saturation.md): new conditional finite-matrix replacement, C10 and C11.
 - [Relative determinantal conductor](07-Relative-determinantal-conductor.md): exact signed determinant ratio C12 and global target C13.
 - [Qualitative Bmax period lift](08-Qualitative-period-lift.md): C14 derives the period-lift assumption of C10 from pinned qualitative admissibility and regularity.
+- [Integral Peirce reduction and local generator bound](09-Peirce-and-local-generator-bound.md): C15–C20, exact off-diagonal obstruction, rank-one relations and local cohomological cost.
 - [Original full LaTeX manuscript](manuscript/adelic_volume_RH.tex): exact original 29-page manuscript source.
 - [Verification and dependency ledger](04-Verification.md): status and tests, precise remaining obligations and reproducibility instructions.
 - [Lean lemmas](verification/StructuralChecks.lean): 11 kernel-checked algebraic interfaces ([successful run](https://github.com/AlexandreDumasResearch/Riemann-Hypothesis/actions/runs/45948892951)), not a formalization of RH.
@@ -50,6 +51,12 @@ Upstream source pinned to [lsernau/grh-lean at 72fead102f663d5c7a407964a13dc0cf9
 | C12 | exact signed determinantal divisor formula | E |
 | C13 | weighted relative determinant budget | C/O |
 | C14 | qualitative Bmax period lift of the local augmentation cocycle | S (human derivation) |
+| C15 | integral idempotent via Hensel and CRT | E |
+| C16 | right augmentation annihilation | E |
+| C17 | exact off-diagonal Peirce quotient | E |
+| C18 | rank-one local evaluation relations | S/E/C |
+| C19 | local generator count independent of family size | E/S |
+| C20 | weighted conductor-exponent target | C/O |
 
 ## Research priority
 1. Formalize C14 and estimate the actual relative saturation images after C8/C9 ties; no need to bound full global Tor if the smaller image suffices.
