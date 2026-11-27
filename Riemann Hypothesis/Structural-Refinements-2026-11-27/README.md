@@ -9,6 +9,7 @@ Research checkpoint: 27 November 2026. AI-assisted working notes; not a proof an
 - [Crystalline and trace algebra](03-Crystalline-and-trace-algebra.md): crystalline block estimates, short/long remainder budget, augmentation, Tor, conormal and separator constructions, new tied-cocycle refinement.
 - [Source-local replacement theorem](05-Source-local-replacement.md): exact main and Tate restricted cocycle costs (new C9 star).
 - [Local saturation and relative Smith lengths](06-Local-saturation.md): new conditional finite-matrix replacement, C10 and C11.
+- [Relative determinantal conductor](07-Relative-determinantal-conductor.md): exact signed determinant ratio C12 and global target C13.
 - [Original full LaTeX manuscript](manuscript/adelic_volume_RH.tex): exact original 29-page manuscript source.
 - [Verification and dependency ledger](04-Verification.md): status and tests, precise remaining obligations and reproducibility instructions.
 - [Lean candidate lemmas](verification/StructuralChecks.lean): small algebraic interfaces, not a formalization of RH.
@@ -46,6 +47,8 @@ Upstream source pinned to [lsernau/grh-lean at 72fead102f663d5c7a407964a13dc0cf9
 
 | C10 | local relation saturation and relative image length | E/C |
 | C11 | weighted relative Smith-length target | O |
+| C12 | exact signed determinantal divisor formula | E |
+| C13 | weighted relative determinant budget | C/O |
 
 ## Research priority
 1. Verify the qualitative local augmentation period lift in C10 and compute relative saturation images after C8/C9 ties; no need to bound full global Tor if the smaller image suffices.
