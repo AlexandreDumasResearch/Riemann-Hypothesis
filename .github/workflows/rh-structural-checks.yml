@@ -32,6 +32,7 @@ jobs:
           cp "Riemann Hypothesis/Structural-Refinements-2026-11-27/verification/StructuralChecks.lean" "$RUNNER_TEMP/grh-upstream/grh/StructuralChecks.lean"
       - name: Check Mathlib-only candidate lemmas
         run: |
+          set -euo pipefail
           cd "$RUNNER_TEMP/grh-upstream/grh"
           cat lean-toolchain
           lean --version
