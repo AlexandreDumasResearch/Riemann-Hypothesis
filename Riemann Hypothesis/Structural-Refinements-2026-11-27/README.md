@@ -8,6 +8,7 @@ Research checkpoint: 27 November 2026. AI-assisted working notes; not a proof an
 - [Adelic determinant and arithmetic ledger](02-Determinants-and-Selmer.md): conservation, reachable projection, mixed twists, weighted clearing and all arithmetic star equations.
 - [Crystalline and trace algebra](03-Crystalline-and-trace-algebra.md): crystalline block estimates, short/long remainder budget, augmentation, Tor, conormal and separator constructions, new tied-cocycle refinement.
 - [Source-local replacement theorem](05-Source-local-replacement.md): exact main and Tate restricted cocycle costs (new C9 star).
+- [Local saturation and relative Smith lengths](06-Local-saturation.md): new conditional finite-matrix replacement, C10 and C11.
 - [Original full LaTeX manuscript](manuscript/adelic_volume_RH.tex): exact original 29-page manuscript source.
 - [Verification and dependency ledger](04-Verification.md): status and tests, precise remaining obligations and reproducibility instructions.
 - [Lean candidate lemmas](verification/StructuralChecks.lean): small algebraic interfaces, not a formalization of RH.
@@ -43,8 +44,11 @@ Upstream source pinned to [lsernau/grh-lean at 72fead102f663d5c7a407964a13dc0cf9
 | C8 | tied, normalized reachable commutator quotient (new) | E/C |
 | C9 | source-local main/Tate replacement and combined conductor budget (new) | E/S/C |
 
+| C10 | local relation saturation and relative image length | E/C |
+| C11 | weighted relative Smith-length target | O |
+
 ## Research priority
-1. Use C8 on the actual main-summand tied rows before spending arithmetic budget on universal crystalline defects.
+1. Verify the qualitative local augmentation period lift in C10 and compute relative saturation images after C8/C9 ties; no need to bound full global Tor if the smaller image suffices.
 2. Establish an effective local conductor for the *image* of local commutators, not a full trace discriminant.
 3. Treat the trivial Tate character separately; it cannot be separated from augmentation.
 4. Check every source-relative substitution, particularly common height multipliers, normalizations and finite-place sums.
