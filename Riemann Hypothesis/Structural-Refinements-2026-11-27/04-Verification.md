@@ -50,3 +50,6 @@ B. Obtain actual finite representation-algebra generators and trace/tame/tied ro
 C. Seek algebraic local polynomial or commutator relations above ℓ implying a cheap relative conductor, then prove weighted global sum. Treat main and character blocks separately; a universal trace discriminant is a fallback, not a sufficient asymptotic estimate.
 D. Only after C, replace the original local crystalline supplier and replay downstream determinant argument. Compare proof dependencies, not just line count and log exponents.
 E. Retain failed and suspended routes in the analytic and determinant files. No priority claim until literature and other distillations are compared.
+
+## Follow-up verification — completed
+Run [45943756130](https://github.com/AlexandreDumasResearch/Riemann-Hypothesis/actions/runs/45943756130) subsequently completed successfully. Both finite-regressions and lean jobs succeeded. Lean version 4.35.0; compiler command ran with pipeline failure propagation. Printed axiom dependencies contain only standard Lean axioms (propext, Classical.choice, Quot.sound, as applicable); no sorryAx. This verifies the seven small interface declarations only, not the substantive tensor, p-adic Hodge, or RH arguments.
