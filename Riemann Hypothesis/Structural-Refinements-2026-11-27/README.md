@@ -64,3 +64,7 @@ Upstream source pinned to [lsernau/grh-lean at 72fead102f663d5c7a407964a13dc0cf9
 3. Treat the trivial Tate character separately; it cannot be separated from augmentation.
 4. Check every source-relative substitution, particularly common height multipliers, normalizations and finite-place sums.
 5. Keep prior analytic pathways, including failed attempts, available for future research. An improvement in logarithmic overhead is not by itself a shorter independent proof.
+
+## 28 November continuation: tied conductors
+
+[10 — Tied quotient, exact conductors, and local exponent transfer](10-Tied-conductor-and-dual-transfer.md) records C21–C34: tied ideal and Tor reduction, actual cup-exponent transfer, full tied main-block annihilator, optimal Smith conductor, saturation counterexample, finite-dual generator count and hybrid weighted global budget. Source-relative bounds, not independently Lean-checked. Next target: fixed augmentation pairings in the generic high-rank low-jump branch, without the universal quantitative supplier.
